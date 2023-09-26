@@ -1,0 +1,48 @@
+First You have to install some of the prerequisites like:
+
+*libmfile*, *gawk*, *g77*, *Xaw*, *Xaw3d*, and *motif* 
+
+These prerequisites can vary according to your linux systems but you will get any substitue or suported library for these packages except libmfile!!
+
+So that's why I am sharing this libmfile source code along with the tv source code file.
+
+(::::Suggestion to use super user for the installation::::)
+
+/////////// LIBMFILE Configuration ///////
+
+-> extract the libmfile-1.0.7.tar.gz 
+-> change the directory to this extracted libmfile-1.0.7" 
+-> now configure it by: ./configure   #If it denies for any permission then give this file a permission by using command: chmod +x configure
+-> then make it by: make
+-> and finally install using: make install
+
+*If it ask for any permission then use super user mode!!
+
+////////// TV Configureation ////////////
+
+-> extract the tv-1.9.13.tar.gz 
+-> change the directory to this extracted file "tv-1.9.13" 
+-> now configure it by: ./configure    #If it denies for any permission then give this file a permission by using command: chmod +x configure
+-> then make it by: make
+-> and finally install using: make install
+
+*Most common error in this build is that libmfile error or some missing xaw or xaw3d libraries. So make those were successfully installed in your system!! 
+
+////////// Post building process ///////
+
+Now if we try to open "tv" it will show you this kinda error:
+
+"tv: error while loading shared libraries: libmfile-1.0.so.0: cannot open shared object file: No such file or directory"
+
+-> To resolve this issue, we have to link the path of that installed libmfile directory, which is in your /usr/local/lib/ directory. 
+
+So you can try to link that in your .bashrc file using the command: export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH  
+
+
+
+Hopefully, you can use tv by these following processes:)
+
+For any other queries and error, you can reach out to me through my email:
+Author: Anil Sharma
+Email: anils051299@gmail.com  
+  
